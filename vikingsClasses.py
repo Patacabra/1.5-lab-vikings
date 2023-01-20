@@ -97,9 +97,9 @@ class War:
  
     def vikingAttack(self):
 
-        v = randint(0, len(self.vikingArmy))
+        v = randint(0, len(self.vikingArmy)-1)
 
-        s = randint(0, len(self.saxonArmy))
+        s = randint(0, len(self.saxonArmy)-1)
 
         a =  self.saxonArmy[s].receiveDamage(self.vikingArmy[v].attack())
         
@@ -110,9 +110,9 @@ class War:
 
     def saxonAttack(self):
 
-        v = randint(0, len(self.vikingArmy))
+        v = randint(0, len(self.vikingArmy)-1)
 
-        s = randint(0, len(self.saxonArmy))
+        s = randint(0, len(self.saxonArmy)-1)
 
         b =  self.vikingArmy[v].receiveDamage(self.saxonArmy[s].attack())
 
@@ -124,14 +124,14 @@ class War:
     
     def showStatus(self):
 
-        if self.saxonArmy == None:
-            return 'Vikings have won the war of the century'
+        if len(self.saxonArmy) == 0:
+            return 'Vikings have won the war of the century!'
         
-        elif self.vikingArmy == None:
-            return 'Saxon have won the war of the century'
+        elif len(self.vikingArmy) <= 0:
+            return 'Saxons have fought for their lives and survive another day...'
 
-        elif self.saxonArmy and self.vikingArmy >= 1:
-            return 'Vikings and Saxons are still in the thick of battle'
+        elif len(self.saxonArmy) and len(self.vikingArmy) >= 1:
+            return 'Vikings and Saxons are still in the thick of battle.'
 
 
 
