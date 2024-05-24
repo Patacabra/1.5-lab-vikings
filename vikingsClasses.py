@@ -130,7 +130,7 @@ class War:
         elif len(self.vikingArmy) <= 0:
             return 'Saxons have fought for their lives and survive another day...'
 
-        elif len(self.saxonArmy) and len(self.vikingArmy) >= 1:
+        elif len(self.saxonArmy) >= 1 and len(self.vikingArmy) >= 1:
             return 'Vikings and Saxons are still in the thick of battle.'
 
 
