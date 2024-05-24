@@ -22,19 +22,19 @@ class TestWar(unittest.TestCase):
 class TestWar2(unittest.TestCase):
     @classmethod
     def setUp(cls):
-        def generateViking():
+        def generate_viking():
             cls.name = 'Harald'
             cls.strength = 150
             cls.health = 300
             return Viking(cls.name, cls.health, cls.strength)
 
-        def generateSaxon():
+        def generate_saxon():
             cls.health = 60
             cls.strength = 25
             return Saxon(cls.health, cls.strength)
 
-        cls.viking = generateViking()
-        cls.saxon = generateSaxon()
+        cls.viking = generate_viking()
+        cls.saxon = generate_saxon()
         cls.war = War()
         cls.war.addSaxon(cls.saxon)
         cls.war.addViking(cls.viking)
